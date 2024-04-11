@@ -14,10 +14,22 @@ reverse(""); // ""
 
 
 function reverse(str) {
-  // Your code here 
+  let strArr = str.split('')
+  let newStr = ''
+  if(strArr.length === 0) return newStr
+  let el = strArr[strArr.length-1]
+  let restOfArr = strArr.pop()
+  newStr += el
+  return newStr + reverse(strArr.join(""))
 }
 
-
+debugger
+console.log(reverse("house")); // "esuoh"
+console.log(reverse("dog")); // "god"
+console.log(reverse("atom")); // "mota"
+console.log(reverse("q")); // "q"
+console.log(reverse("id")); // "di"
+console.log(reverse("")); // ""
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = reverse;
